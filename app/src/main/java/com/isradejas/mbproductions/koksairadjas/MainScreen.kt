@@ -1,14 +1,15 @@
 package com.isradejas.mbproductions.koksairadjas
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Window
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import kotlinx.android.synthetic.main.activity_main_screen.app_logo
 import kotlinx.android.synthetic.main.activity_main_screen.button_test
 import kotlinx.android.synthetic.main.activity_main_screen.button_podcasts
 import kotlinx.android.synthetic.main.activity_main_screen.imageView2
-import kotlinx.android.synthetic.main.activity_main_screen.quatation_layout
 import kotlinx.android.synthetic.main.activity_main_screen.img_quat
 import kotlinx.android.synthetic.main.activity_main_screen.txt_quat
 import kotlinx.android.synthetic.main.activity_main_screen.txt_quat_author
@@ -21,6 +22,10 @@ class MainScreen : AppCompatActivity() {
         setContentView(R.layout.activity_main_screen)
 
         startAnim()
+
+        button_podcasts.setOnClickListener{
+            startActivity(Intent(this, EngineersActivity::class.java))
+        }
     }
 
 
@@ -42,8 +47,6 @@ class MainScreen : AppCompatActivity() {
 
         button_test.startAnimation(left_to_right)
         button_podcasts.startAnimation(right_to_left)
-
-
 
 
 
