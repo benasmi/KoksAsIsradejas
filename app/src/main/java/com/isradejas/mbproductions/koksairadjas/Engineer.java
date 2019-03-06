@@ -1,6 +1,8 @@
 package com.isradejas.mbproductions.koksairadjas;
 
-public class Engineer {
+import java.io.Serializable;
+
+public class Engineer implements Serializable {
 
     public String FullName;
     public String About;
