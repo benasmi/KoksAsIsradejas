@@ -23,6 +23,8 @@ class MainScreen : AppCompatActivity() {
 
         startAnim()
 
+
+
         button_podcasts.setOnClickListener{
             startActivity(Intent(this, EngineersActivity::class.java))
         }

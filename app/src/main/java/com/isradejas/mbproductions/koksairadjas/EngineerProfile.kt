@@ -3,6 +3,7 @@ package com.isradejas.mbproductions.koksairadjas
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
 import kotlinx.android.synthetic.main.activity_engineer_profile.podcast_recycler
 import kotlinx.android.synthetic.main.activity_engineer_profile.img_back_arrow
 import kotlinx.android.synthetic.main.activity_engineer_profile.profile_image
@@ -47,6 +48,7 @@ class EngineerProfile : AppCompatActivity() {
 
         // Access the RecyclerView Adapter and load the data into it
         podcast_recycler.adapter = PodcastRecyclerView(podcasts, this)
+
     }
 
 

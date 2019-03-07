@@ -11,8 +11,17 @@ import kotlinx.android.synthetic.main.podcast_element.view.*
 
 class PodcastRecyclerView(val items : ArrayList<Podcast>, val context: Context) : RecyclerView.Adapter<ViewHolderPodcast>() {
 
-    private var player: MediaPlayer = MediaPlayer()
-    private var lastPos = -1;
+    var player: MediaPlayer = MediaPlayer()
+
+
+    fun callBack(){
+        player.setOnCompletionListener(){
+            Log.i("TEST1", "asdasd")
+        }
+
+    }
+
+    public var lastPos = -1;
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolderPodcast {
         return ViewHolderPodcast(LayoutInflater.from(context).inflate(R.layout.podcast_element, p0, false))
     }
@@ -23,39 +32,74 @@ class PodcastRecyclerView(val items : ArrayList<Podcast>, val context: Context) 
 
     override fun onBindViewHolder(holder: ViewHolderPodcast, position: Int) {
         holder?.question?.setText(items.get(position).description)
-        holder?.playLayout.setOnClickListener {
+
+
+
+        if(position==lastPos){
+            if(items[lastPos].isRunning){
+                holder?.playButton.setBackgroundResource(R.drawable.ic_pause)
+
+            }else{
+                holder?.playButton.setBackgroundResource(R.drawable.ic_play)
+
+            }
+        }else{
+            holder?.playButton.setBackgroundResource(R.drawable.ic_play)
+        }
+
+        holder?.playButton.setOnClickListener {
+
+
+
+        Log.i("TEST1", "${position}  |  ${lastPos}")
             if (!items[position].isRunning) {
+                holder?.oldPosition
+                //Jeigu ta patį paleidžia po pauzės
                 if(position==lastPos){
                     player.start()
                     items[position].isRunning = true
+                    notifyDataSetChanged()
                     return@setOnClickListener
                 }
 
+                //Jeigu paleidžia visiškai kitą įrašą
                 if(player.isPlaying && player!=null){
                     items[lastPos].isRunning = false;
                     player.stop()
                     player.reset()
                     player.release()
+
                 }
 
                 items[position].isRunning = true;
                 lastPos = position;
                 player = MediaPlayer.create(context, items[position].fileName)
                 player.start()
+                
+
+
+                //Įrašo pauzė
             } else {
                 items[position].isRunning = false;
                 player.pause()
             }
+            notifyDataSetChanged()
+
         }
 
 
+
     }
+
+
 }
 
 class ViewHolderPodcast (view: View) : RecyclerView.ViewHolder(view) {
-    // Holds the TextView that will add each animal to
+
     val question = view.txt_question
     val playButton  = view.btn_play
-    val playLayout = view.play_layout
+
 
 }
+
+
