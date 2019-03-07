@@ -12,14 +12,8 @@ import kotlinx.android.synthetic.main.podcast_element.view.*
 class PodcastRecyclerView(val items : ArrayList<Podcast>, val context: Context) : RecyclerView.Adapter<ViewHolderPodcast>() {
 
     var player: MediaPlayer = MediaPlayer()
+    var audioFinished = false;
 
-
-    fun callBack(){
-        player.setOnCompletionListener(){
-            Log.i("TEST1", "asdasd")
-        }
-
-    }
 
     public var lastPos = -1;
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolderPodcast {
@@ -51,11 +45,11 @@ class PodcastRecyclerView(val items : ArrayList<Podcast>, val context: Context) 
 
 
 
-        Log.i("TEST1", "${position}  |  ${lastPos}")
+        //Log.i("TEST1", "${position}  |  ${lastPos}")
             if (!items[position].isRunning) {
                 holder?.oldPosition
                 //Jeigu ta patį paleidžia po pauzės
-                if(position==lastPos){
+                if(position==lastPos && !audioFinished){
                     player.start()
                     items[position].isRunning = true
                     notifyDataSetChanged()
@@ -63,7 +57,7 @@ class PodcastRecyclerView(val items : ArrayList<Podcast>, val context: Context) 
                 }
 
                 //Jeigu paleidžia visiškai kitą įrašą
-                if(player.isPlaying && player!=null){
+                if(player.isPlaying && player!=null && !audioFinished){
                     items[lastPos].isRunning = false;
                     player.stop()
                     player.reset()
@@ -75,8 +69,15 @@ class PodcastRecyclerView(val items : ArrayList<Podcast>, val context: Context) 
                 lastPos = position;
                 player = MediaPlayer.create(context, items[position].fileName)
                 player.start()
-                
-
+                audioFinished=false;
+                Log.i("TEST1", "${player.duration}")
+                player.setOnCompletionListener(){
+                    Log.i("TEST1", "Audio finished")
+                    player.reset()
+                    audioFinished = true;
+                    items[position].isRunning = false;
+                    notifyDataSetChanged()
+                }
 
                 //Įrašo pauzė
             } else {

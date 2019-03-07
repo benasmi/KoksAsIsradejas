@@ -55,7 +55,7 @@ class EngineerProfile : AppCompatActivity() {
     fun getPodcasts(engineerName:String){
 
         if(engineerName.equals("Edmundas Balcikonis")){
-            podcasts.add(Podcast(false, R.raw.edmundas_zaidimai_vaikysteje,questions[0]))
+            podcasts.add(Podcast(false, R.raw.dolphi,questions[0]))
             podcasts.add(Podcast(false, R.raw.edmundas_universiteto_metu,questions[1]))
             podcasts.add(Podcast(false, R.raw.edmundas_sekmes_pradzia,questions[2]))
             podcasts.add(Podcast(false, R.raw.edmundas_kokio_gyvenimo,questions[3]))
