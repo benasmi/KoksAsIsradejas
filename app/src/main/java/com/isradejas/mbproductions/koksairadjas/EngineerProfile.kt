@@ -1,8 +1,10 @@
 package com.isradejas.mbproductions.koksairadjas
 
+import android.media.MediaPlayer
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_engineer_profile.podcast_recycler
 import kotlinx.android.synthetic.main.activity_engineer_profile.img_back_arrow
@@ -34,6 +36,7 @@ class EngineerProfile : AppCompatActivity() {
         setContentView(R.layout.activity_engineer_profile)
 
         img_back_arrow.setOnClickListener {
+ 
             onBackPressed()
         }
 
@@ -44,7 +47,7 @@ class EngineerProfile : AppCompatActivity() {
         getPodcasts(engineer.FullName);
 
         // Creates a vertical Layout Manager
-        podcast_recycler.layoutManager = LinearLayoutManager(this)
+        podcast_recycler.layoutManager = LinearLayoutManager(this) as RecyclerView.LayoutManager?
 
         // Access the RecyclerView Adapter and load the data into it
         podcast_recycler.adapter = PodcastRecyclerView(podcasts, this)
@@ -55,6 +58,7 @@ class EngineerProfile : AppCompatActivity() {
     fun getPodcasts(engineerName:String){
 
         if(engineerName.equals("Edmundas Balcikonis")){
+           /*
             podcasts.add(Podcast(false, R.raw.dolphi,questions[0]))
             podcasts.add(Podcast(false, R.raw.edmundas_universiteto_metu,questions[1]))
             podcasts.add(Podcast(false, R.raw.edmundas_sekmes_pradzia,questions[2]))
@@ -68,7 +72,7 @@ class EngineerProfile : AppCompatActivity() {
             podcasts.add(Podcast(false, R.raw.edmundas_renkasi_darbuotojus,questions[10]))
             podcasts.add(Podcast(false, R.raw.edmundas_ko_truksta,questions[11]))
             podcasts.add(Podcast(false, R.raw.edmundas_motyvacija,questions[12]))
-
+            */
         }
 
 

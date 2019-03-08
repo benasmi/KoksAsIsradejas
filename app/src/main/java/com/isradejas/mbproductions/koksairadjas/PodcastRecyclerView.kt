@@ -11,8 +11,12 @@ import kotlinx.android.synthetic.main.podcast_element.view.*
 
 class PodcastRecyclerView(val items : ArrayList<Podcast>, val context: Context) : RecyclerView.Adapter<ViewHolderPodcast>() {
 
-    var player: MediaPlayer = MediaPlayer()
+    companion object {
+        var player: MediaPlayer = MediaPlayer()
+
+    }
     var audioFinished = false;
+
 
 
     public var lastPos = -1;
