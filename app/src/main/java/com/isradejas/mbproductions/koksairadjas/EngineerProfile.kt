@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.widget.ProgressBar
 import android.widget.SeekBar
+import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_engineer_profile.podcast_recycler
 import kotlinx.android.synthetic.main.activity_engineer_profile.img_back_arrow
 import kotlinx.android.synthetic.main.activity_engineer_profile.profile_image
@@ -64,7 +65,7 @@ class EngineerProfile : AppCompatActivity() {
 
 
     companion object {
-
+     lateinit var progressTextview:SeekBar
     }
 
     val podcasts: ArrayList<Podcast> = ArrayList()
@@ -76,9 +77,7 @@ class EngineerProfile : AppCompatActivity() {
         img_back_arrow.setOnClickListener {
 
             if(PodcastRecyclerView.player.isPlaying){
-                PodcastRecyclerView.player.stop()
                 PodcastRecyclerView.player.reset()
-                PodcastRecyclerView.player.release()
             }
 
             PodcastRecyclerView.handler.removeCallbacks(PodcastRecyclerView.runnable)

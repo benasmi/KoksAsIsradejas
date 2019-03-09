@@ -87,15 +87,17 @@
                 android:textSize="20dp" />
 
             <TextView
-                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
-                android:text="2:56"
+                android:layout_height="wrap_content"
                 android:gravity="right"
-                android:layout_height="wrap_content" />
+                android:id="@+id/tv_progress"
+                android:layout_marginTop="10dp"
+                android:text="2:56"
+                />
+
             <ProgressBar
                 android:layout_width="match_parent"
                 android:layout_height="5dp"
-                android:progress="100"
                 android:indeterminate="false"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:progressDrawable="@drawable/ic_progress_bar"
