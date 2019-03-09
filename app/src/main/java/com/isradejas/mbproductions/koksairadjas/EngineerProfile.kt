@@ -65,7 +65,7 @@ class EngineerProfile : AppCompatActivity() {
 
 
     companion object {
-     lateinit var progressTextview:SeekBar
+     lateinit var progressTextview:TextView
     }
 
     val podcasts: ArrayList<Podcast> = ArrayList()
@@ -85,6 +85,7 @@ class EngineerProfile : AppCompatActivity() {
         }
 
         var seekBar = findViewById<ProgressBar>(R.id.progress_bar);
+        progressTextview = findViewById<TextView>(R.id.tv_progress)
 
         val engineer = intent.extras.get("Engineer") as Engineer
         profile_image.setImageDrawable(resources.getDrawable(engineer.PhotoResource))
@@ -101,8 +102,9 @@ class EngineerProfile : AppCompatActivity() {
     }
 
 
-    fun getPodcasts(engineerName:String){
 
+
+    fun getPodcasts(engineerName:String){
         if(engineerName.equals("Edmundas Balcikonis")){
             podcasts.add(Podcast(false, R.raw.edmundas_zaidimu_aikstele,edmundas_questions[0]))
             podcasts.add(Podcast(false, R.raw.edmundas_studiju_metu,edmundas_questions[1]))

@@ -37,8 +37,6 @@ class PodcastRecyclerView(val items: ArrayList<Podcast>, val context: Context, s
     override fun onBindViewHolder(holder: ViewHolderPodcast, position: Int) {
         holder?.question?.setText(items.get(position).description)
 
-
-
         if(position==lastPos){
             if(items[lastPos].isRunning){
                 holder?.playButton.setBackgroundResource(R.drawable.ic_pause)
@@ -52,10 +50,6 @@ class PodcastRecyclerView(val items: ArrayList<Podcast>, val context: Context, s
         }
 
         holder?.playButton.setOnClickListener {
-
-
-
-        //Log.i("TEST1", "${position}  |  ${lastPos}")
             if (!items[position].isRunning) {
                 holder?.oldPosition
                 //Jeigu ta patį paleidžia po pauzės
@@ -83,6 +77,8 @@ class PodcastRecyclerView(val items: ArrayList<Podcast>, val context: Context, s
                 setUpProgressBar()
                 player.setOnCompletionListener(){
                     player.reset()
+                    EngineerProfile.progressTextview.setText("");
+                    progressBar.setProgress(0)
                     PodcastRecyclerView.handler.removeCallbacks(PodcastRecyclerView.runnable)
                     audioFinished = true;
                     items[position].isRunning = false;
@@ -94,34 +90,35 @@ class PodcastRecyclerView(val items: ArrayList<Podcast>, val context: Context, s
                 player.pause()
             }
             notifyDataSetChanged()
-
         }
-
-
-
     }
 
     // Method to initialize seek bar and audio stats
     private fun setUpProgressBar() {
         progressBar.max = player.duration
-
         runnable = Runnable {
             progressBar.progress = player.currentPosition
-
-            //tv_pass.text = "${player.currentSeconds} sec"
-            //val diff = player.seconds - player.currentSeconds
-            //tv_due.text = "$diff sec"
-
+            EngineerProfile.progressTextview.setText(NormalizeTime(player.duration- player.currentPosition))
             handler.postDelayed(runnable, 100)
         }
         handler.postDelayed(runnable, 100)
     }
 
-
+    private fun NormalizeTime(time:Int) : String{
+        var builder = StringBuilder();
+        var totalSeconds = time/1000;
+        var mins: Int = totalSeconds/60;
+        var secs: Int = totalSeconds - mins*60;
+        if(secs<10){
+            builder.append("${mins}:0${secs}")
+        }else{
+            builder.append("${mins}:${secs}")
+        }
+       return builder.toString()
+    }
 }
 
 class ViewHolderPodcast (view: View) : RecyclerView.ViewHolder(view) {
-
     val question = view.txt_question
     val playButton  = view.btn_play
 
