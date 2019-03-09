@@ -31,16 +31,6 @@ class EngineersActivity : AppCompatActivity() {
         engineers_recyclerview.adapter = EngineersRecyclerView(engineers, this)
 
     }
-
-
-    /*
-
-    ageView iw= (ImageView)findViewById(R.id.imageView1);
-int resID = getResources().getIdentifier(drawableName, "drawable",  getPackageName());
-iw.setImageResource(resID);
-     */
-
-
         // Adds animals to the empty animals ArrayList
         fun addEngineers() {
             Log.i("TEST", packageName);
@@ -50,8 +40,9 @@ iw.setImageResource(resID);
             engineers.add(Engineer("Vytautas Jokužis","Elinta įkūrėjas, technologijos mokslų daktaras", R.drawable.vytautas_jokuzis))
             engineers.add(Engineer("Vytenis Bužas","'LithuanicaSAT-ą' kūrėjas, kosminės misijos vadovas", R.drawable.vytenis_buzas))
             engineers.add(Engineer("Sergejus Trofimovas ir Ričardas Jaščemskas","'Nordcurrent' įkūrėjas ir komunikacijos", R.drawable.sergejus_ricardas))
-
-
         }
 
+        fun startAnim(){
+            
+        }
 }

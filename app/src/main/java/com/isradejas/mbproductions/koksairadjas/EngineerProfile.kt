@@ -1,5 +1,6 @@
 package com.isradejas.mbproductions.koksairadjas
 
+import android.graphics.Typeface
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
@@ -76,11 +77,11 @@ class EngineerProfile : AppCompatActivity() {
 
         img_back_arrow.setOnClickListener {
 
-            if(PodcastRecyclerView.player.isPlaying){
+            if(PodcastRecyclerView.player.isPlaying && PodcastRecyclerView.player!=null){
                 PodcastRecyclerView.player.reset()
+                PodcastRecyclerView.handler.removeCallbacks(PodcastRecyclerView.runnable)
             }
 
-            PodcastRecyclerView.handler.removeCallbacks(PodcastRecyclerView.runnable)
             onBackPressed()
         }
 
@@ -99,7 +100,10 @@ class EngineerProfile : AppCompatActivity() {
         // Access the RecyclerView Adapter and load the data into it
         podcast_recycler.adapter = PodcastRecyclerView(podcasts, this,seekBar)
 
+        setFonts()
     }
+
+
 
 
 
@@ -157,6 +161,12 @@ class EngineerProfile : AppCompatActivity() {
 
 
 
+    }
+
+    fun setFonts(){
+        val typeface = Typeface.createFromAsset(applicationContext.assets, "fonts/larseit.otf")
+        profile_name.setTypeface(typeface)
+        profile_description.setTypeface(typeface)
     }
 
 }

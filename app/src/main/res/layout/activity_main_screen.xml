@@ -9,16 +9,13 @@
 
     <ImageView
         android:id="@+id/app_logo"
-        android:layout_width="114dp"
-        android:layout_height="108dp"
+        android:layout_width="135dp"
+        android:layout_height="131dp"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:background="@drawable/icon"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -44,19 +41,20 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="70dp"
-                android:layout_height="80dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="6dp"
                 android:id="@+id/img_quat"
                 android:background="@drawable/ic_qtn" />
 
             <TextView
                 android:layout_width="258dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:id="@+id/txt_quat"
                 android:gravity="left"
                 android:text="Dideli dalykai versle niekada nepadaromi vieno žmogaus. Visada būtina komanda bendražygių."
-                android:textSize="20dp" />
+                android:textSize="19dp" />
 
         </LinearLayout>
 
@@ -106,13 +104,16 @@
                 android:layout_height="match_parent">
                 <ImageView
                     android:layout_width="60dp"
+                    android:layout_gravity="center"
                     android:background="@drawable/ic_molecule"
                     android:layout_height="60dp" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:textSize="25dp"
+                    android:id="@+id/txt_test"
                     android:layout_gravity="center"
+                    android:gravity="center"
                     android:layout_height="wrap_content"
                     android:textColor="#FFF"
                     android:text="TESTAS"/>
@@ -121,6 +122,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="#FFF"
+                    android:id="@+id/txt_test_description"
                     android:text="Koks aš kūrėjas?"
                     android:gravity="center"
                     android:textSize="19dp"
@@ -152,16 +154,18 @@
                 android:layout_height="match_parent">
                 <ImageView
                     android:layout_width="60dp"
+                    android:layout_gravity="center"
                     android:background="@drawable/ic_award"
                     android:layout_height="60dp" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:textSize="25dp"
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:layout_height="wrap_content"
                     android:textColor="#FFF"
+                    android:id="@+id/txt_famous_engineer"
                     android:text="ŽYMŪS INŽINIERIAI"/>
 
                 <TextView
@@ -169,6 +173,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#FFF"
                     android:text="Mūsų Lietuvos kūrėjai"
+                    android:id="@+id/txt_famous_engineer_descp"
                     android:gravity="center"
                     android:textSize="19dp"
                     />

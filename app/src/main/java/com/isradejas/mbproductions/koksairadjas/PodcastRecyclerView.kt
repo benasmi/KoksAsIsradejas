@@ -1,6 +1,7 @@
 package com.isradejas.mbproductions.koksairadjas
 
 import android.content.Context
+import android.graphics.Typeface
 import android.media.MediaPlayer
 import android.os.Handler
 import android.support.v7.widget.RecyclerView
@@ -15,6 +16,9 @@ import kotlinx.android.synthetic.main.podcast_element.view.*
 
 
 class PodcastRecyclerView(val items: ArrayList<Podcast>, val context: Context, seekBar: ProgressBar) : RecyclerView.Adapter<ViewHolderPodcast>() {
+
+    val typeface = Typeface.createFromAsset(context.assets, "fonts/larseit.otf")
+
 
     companion object {
         var player: MediaPlayer = MediaPlayer()
@@ -36,7 +40,7 @@ class PodcastRecyclerView(val items: ArrayList<Podcast>, val context: Context, s
 
     override fun onBindViewHolder(holder: ViewHolderPodcast, position: Int) {
         holder?.question?.setText(items.get(position).description)
-
+        holder?.question.setTypeface(typeface)
         if(position==lastPos){
             if(items[lastPos].isRunning){
                 holder?.playButton.setBackgroundResource(R.drawable.ic_pause)
