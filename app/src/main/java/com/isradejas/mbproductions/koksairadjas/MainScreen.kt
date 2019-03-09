@@ -1,8 +1,10 @@
 package com.isradejas.mbproductions.koksairadjas
 
+import android.app.PendingIntent.getActivity
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Window
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
@@ -13,6 +15,7 @@ import kotlinx.android.synthetic.main.activity_main_screen.imageView2
 import kotlinx.android.synthetic.main.activity_main_screen.img_quat
 import kotlinx.android.synthetic.main.activity_main_screen.txt_quat
 import kotlinx.android.synthetic.main.activity_main_screen.txt_quat_author
+import java.io.IOException
 
 
 class MainScreen : AppCompatActivity() {
@@ -24,10 +27,21 @@ class MainScreen : AppCompatActivity() {
         startAnim()
 
 
-
+        Log.i("TEST1",loadJSONFromAsset("quotes.json"))
         button_podcasts.setOnClickListener{
             startActivity(Intent(this, EngineersActivity::class.java))
         }
+    }
+
+    fun loadJSONFromAsset(jsonFile : String): String {
+            var json: String? = null
+            val inputStream = getAssets().open(jsonFile)
+            val size = inputStream.available()
+            val buffer = ByteArray(size)
+            inputStream.read(buffer)
+            inputStream.close()
+            json = String(buffer)
+        return json
     }
 
 
