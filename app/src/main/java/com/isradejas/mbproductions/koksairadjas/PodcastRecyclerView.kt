@@ -2,24 +2,30 @@ package com.isradejas.mbproductions.koksairadjas
 
 import android.content.Context
 import android.media.MediaPlayer
+import android.os.Handler
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
+import android.widget.SeekBar
 import kotlinx.android.synthetic.main.podcast_element.view.*
 
-class PodcastRecyclerView(val items : ArrayList<Podcast>, val context: Context) : RecyclerView.Adapter<ViewHolderPodcast>() {
+
+
+class PodcastRecyclerView(val items: ArrayList<Podcast>, val context: Context, seekBar: ProgressBar) : RecyclerView.Adapter<ViewHolderPodcast>() {
 
     companion object {
         var player: MediaPlayer = MediaPlayer()
-
+        public lateinit var runnable:Runnable
+        public var handler: Handler = Handler()
     }
+
     var audioFinished = false;
+    var lastPos = -1;
+    var progressBar = seekBar;
 
-
-
-    public var lastPos = -1;
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolderPodcast {
         return ViewHolderPodcast(LayoutInflater.from(context).inflate(R.layout.podcast_element, p0, false))
     }
@@ -74,15 +80,14 @@ class PodcastRecyclerView(val items : ArrayList<Podcast>, val context: Context) 
                 player = MediaPlayer.create(context, items[position].fileName)
                 player.start()
                 audioFinished=false;
-                Log.i("TEST1", "${player.duration}")
+                setUpProgressBar()
                 player.setOnCompletionListener(){
-                    Log.i("TEST1", "Audio finished")
                     player.reset()
+                    PodcastRecyclerView.handler.removeCallbacks(PodcastRecyclerView.runnable)
                     audioFinished = true;
                     items[position].isRunning = false;
                     notifyDataSetChanged()
                 }
-
                 //Įrašo pauzė
             } else {
                 items[position].isRunning = false;
@@ -94,6 +99,22 @@ class PodcastRecyclerView(val items : ArrayList<Podcast>, val context: Context) 
 
 
 
+    }
+
+    // Method to initialize seek bar and audio stats
+    private fun setUpProgressBar() {
+        progressBar.max = player.duration
+
+        runnable = Runnable {
+            progressBar.progress = player.currentPosition
+
+            //tv_pass.text = "${player.currentSeconds} sec"
+            //val diff = player.seconds - player.currentSeconds
+            //tv_due.text = "$diff sec"
+
+            handler.postDelayed(runnable, 100)
+        }
+        handler.postDelayed(runnable, 100)
     }
 
 
