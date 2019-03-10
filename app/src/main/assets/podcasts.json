@@ -1,0 +1,202 @@
+[
+  {
+    "name": "Edmundas Balcikonis",
+    "topics":
+    [
+      {
+        "question" : "Ką mėgote veikti žaidimo aikštelėje?",
+        "raw" : "edmundas_zaidimu_aikstele"
+      },
+      {
+        "question" : "Ką įdomaus turėjote galimybę kurti universiteto studijų metu, kas jus išlaikė šiame kelyje?",
+        "raw" : "edmundas_studiju_metu"
+      },
+      {
+        "question" : "Kada buvo Jūsų sėkmės pradžia?",
+        "raw" : "edmundas_sekmes_pradzia"
+      },
+      {
+        "question" : "Galbūt galite papasakoti apie paskutinę ar įsimintiną savo inžinerinę sėkmę bei nesėkmes?",
+        "raw" : "edmundas_inzinerine_sekme"
+      },
+      {
+        "question" : "Kokio gyvenimo norėtumėte, Elono Musko, Bilo Geitso, Eriko Schmito, Steve Jobso, Prezidentės Grybauskaitės, Premjero ar galbūt kt.?",
+        "raw" : "edmundas_kokio_gyvenimo_noretumet"
+      },
+      {
+        "question" : "Ar išdrįstumėt kardinaliai pakeisti savo darbo sritį? Jei taip, tai kokia linkme dirbtumėte?",
+        "raw" : "edmundas_keicia_profesija"
+      },
+      {
+        "question" : "Ko palinkėtumėt jaunam žmogui?",
+        "raw" : "edmundas_jaunam_zmogui_linkejimas"
+      },
+      {
+        "question" : "Kaip įsivaizduojate inžinieriaus gyvenimo kelia, gimsiančio šiandien ligoninėje?",
+        "raw" : "edmundas_naujagimiai"
+      },
+      {
+        "question" : "Kokios srities specialistai, asmenybės buvo Jūsų siekiamybė vaikystėje/pauglystėje?",
+        "raw" : "edmundas_siekiamybe_vaikysteje"
+      },
+      {
+        "question" : "Ar buvo lengva pasirinkti profesiją?",
+        "raw" : "edmundas_ar_sunku_pasirinkti_profesija"
+      },
+      {
+        "question" : "Koks sprendimas, Jūsų manymų, tai nulėmė?",
+        "raw" : "edmundas_koks_sprendimas_nuleme"
+      },
+      {
+        "question" : "Kaip Jūs renkatės bendradarbius? Kaip pas jus vyksta kūrybinis darbas? Ar turite specialų sėkmingo produkto receptą?",
+        "raw" : "edmundas_renkasi_darbuotoja"
+      },
+      {
+        "question" : "Kokia būtų jūsų ideali diena? Ko šiuo metu trūksta?",
+        "raw" : "edmundas_ko_truksta_dabar"
+      },
+      {
+        "question" : "Jūsų motyvacijos šaltinis?",
+        "raw" : "edmundas_motyvacijos_paslaptis"
+      }
+
+    ]
+  },
+
+  {
+    "name" : "Sergejus Trofimovas ir Ričardas Jaščemskas",
+    "topics" :
+    [
+      {
+        "question" : "Ką mėgote veikti žaidimo aikštelėje?",
+        "raw" : "sergejus_ka_megote_veikti_zaidimo"
+      },
+      {
+        "question" : "Ką įdomaus turėjote galimybę kurti universiteto studijų metu, kas jus išlaikė šiame kelyje?",
+        "raw" : "sergejus_universiteto_laikais"
+      },
+      {
+        "question" : "Kada buvo Jūsų sėkmės pradžia?",
+        "raw" : "sergejus_sekmes_pradzia"
+      },
+      {
+        "question" : "Galbūt galite papasakoti apie paskutinę ar įsimintiną savo inžinerinę sėkmę bei nesėkmes?",
+        "raw" : "sergejus_inzinerine_sekme"
+      },
+      {
+        "question" : "Kokio gyvenimo norėtumėte, Elono Musko, Bilo Geitso, Eriko Schmito, Steve Jobso, Prezidentės Grybauskaitės, Premjero ar galbūt kt.?",
+        "raw" : "sergejus_kokio_gyvenimo_noretumet"
+      },
+      {
+        "question" : "Ar išdrįstumėt kardinaliai pakeisti savo darbo sritį? Jei taip, tai kokia linkme dirbtumėte?",
+        "raw" : "sergejus_ar_keistumete_profesija"
+      },
+      {
+        "question" : "Kokios srities specialistai, asmenybės buvo Jūsų siekiamybė vaikystėje/pauglystėje?",
+        "raw" : "sergejus_kokios_srities_specialistai"
+      },
+      {
+        "question" : "Ar buvo lengva pasirinkti profesiją?",
+        "raw" : "sergejus_ar_sunku_pasirinkti_profesija"
+      },
+      {
+        "question" : "Kaip Jūs renkatės bendradarbius? Kaip pas jus vyksta kūrybinis darbas? Ar turite specialų sėkmingo produkto receptą?",
+        "raw" : "sergejus_kaip_renkaties_darbuotoja"
+      },
+      {
+        "question" : "Kokia būtų jūsų ideali diena? Ko šiuo metu trūksta?",
+        "raw" : "sergejus_ko_truksta"
+      },
+      {
+        "question" : "Ką prisimenate statę darželio, mokyklos laikais",
+        "raw" : "sergejus_darzelio_laikai"
+      },
+      {
+        "question" : "Kiek kito Jūsų pomėgiai paauglystėje?",
+        "raw" : "sergejus_kiek_kito_pomegiai"
+      },
+      {
+        "question" : "Ar jūsų sukurto produkto sėkmė pasirodė netikėta?",
+        "raw" : "sergejus_ar_netiketa_sekme"
+      },
+      {
+        "question" : "Ar šiuo metu turite autoritetą, kuris jus įkvepia labiausiai?",
+        "raw" : "sergejus_ar_turite_autoriteta"
+      }
+    ]
+  },
+
+  {
+    "name" : "Vytautas Jokužis",
+    "topics" :
+    [
+      {
+        "question" : "Ką įdomaus turėjote galimybę kurti universiteto studijų metu, kas jus išlaikė šiame kelyje?",
+        "raw" : "vytautas_universiteto_metais"
+      },
+      {
+        "question" : "Kada buvo Jūsų sėkmės pradžia?",
+        "raw" : "vytautas_sekmes_pradzia"
+      },
+      {
+        "question" : "Galbūt galite papasakoti apie paskutinę ar įsimintiną savo inžinerinę sėkmę bei nesėkmes?",
+        "raw" : "vytautas_inzinerine_sekme_nesekme"
+      },
+      {
+        "question" : "Kokio gyvenimo norėtumėte, Elono Musko, Bilo Geitso, Eriko Schmito, Steve Jobso, Prezidentės Grybauskaitės, Premjero ar galbūt kt.?",
+        "raw" : "vytautas_kokio_gyvenimo"
+      },
+      {
+        "question" : "Ar išdrįstumėt kardinaliai pakeisti savo darbo sritį? Jei taip, tai kokia linkme dirbtumėte?",
+        "raw" : "vytautas_keicia_profesija"
+      },
+      {
+        "question" : "Kokios srities specialistai, asmenybės buvo Jūsų siekiamybė vaikystėje/pauglystėje?",
+        "raw" : "vytautas_kokios_srities_specialistai"
+      },
+      {
+        "question" : "Kokie yra jaunimo profesijos iššūkiai?",
+        "raw" : "vytautas_jaunimo_profesijos_issukiai"
+      },
+      {
+        "question" : "Kaip Jūs renkatės bendradarbius? Kaip pas jus vyksta kūrybinis darbas? Ar turite specialų sėkmingo produkto receptą?",
+        "raw" : "vytautas_renkasi_darbuotojus"
+      },
+      {
+        "question" : "Kokia būtų jūsų ideali diena? Ko šiuo metu trūksta?",
+        "raw" : "vytautas_ko_truksta"
+      },
+      {
+        "question" : "Kažką taisydavote?",
+        "raw" : "vytautas_ka_taisydavote"
+      },
+      {
+        "question" : "Kokios mėgstamiausios technologijos?",
+        "raw" : "vytautas_megstamiausios_technologijos"
+      },
+      {
+        "question" : "Ar jau turėjote produktą, kai pradėjote kurti įmonę?",
+        "raw" : "vytautas_ar_jau_turejote_produkta"
+      },
+      {
+        "question" : "Kaip nesėkmės Jūsų nesužlugdė?",
+        "raw" : "vytautas_kaip_nesekmes_nesuzlugde"
+      },
+      {
+        "question" : "Kaip jaunam žmogui atrasti motyvacijos?",
+        "raw" : "vytautas_motyvacija"
+      },
+      {
+        "question" : "Ko palinkėtumėt jaunam žmogui?",
+        "raw" : "vytautas_ko_palinketumet_jaunam_zmogui"
+      },
+      {
+        "question" : "Kaip įsivaizduojate inžinieriaus gyvenimo, kelia, gimsiančio šiandien ligoninėje?",
+        "raw" : "vytautas_naujagimiai"
+      }
+
+    ]
+  }
+]
+
+
