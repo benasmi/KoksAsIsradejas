@@ -1,26 +1,26 @@
 [{
     "name": "Robotikas",
     "description": "Robotiko aprašymas",
-    "illustration": "img/robotikas.png"
+    "drawable": "ic_robotics"
   },
   {
     "name": "Mechanikas",
-    "description": "Mechaniko aprašymas",
-    "illustration": "img/mechanikas.png"
+    "description": "Puikiai susidoroja su mechanikos, elektronikos ir net informacinių technologijų poreikiais",
+    "drawable": "ic_mechanics"
   },
   {
     "name": "Programuotojas",
     "description": "Programuotojo aprašymas",
-    "illustration": "img/programuotojas.png"
+    "drawable": "ic_programmer"
   },
   {
     "name": "Elektronikas",
     "description": "Elektroniko aprašymas",
-    "illustration": "img/elektronikas.png"
+    "drawable": "ic_electrician"
   },
   {
     "name": "Inovacijų vadybininkas",
     "description": "Inovacijų vadybininko aprašymas",
-    "illustration": "img/inovaciju_vadybininkas.png"
-  },
+    "drawable": "ic_enterp"
+  }
 ]

@@ -1,31 +1,37 @@
 [{
-    "name": "Vytautas Buzas",
-    "specialty": "Orlaivių inžinierius",
+    "name": "Vytenis Buzas",
+    "specialty": "'Lituanica SAT-1' kūrėjas, kosminės misijos vadovas",
+    "drawable": "vytenis_buzas",
     "topics": [1]
   },
   {
-    "name": "Dr. Vytautas Jokužis",
-    "specialty": "Robotikos kompanijos įkūrėjas, inžinierius.",
+    "name": "Vytautas Jokužis",
+    "specialty": "Elinta įkūrėjas, technologijos mokslų daktaras",
+    "drawable": "vytautas_jokuzis",
     "topics": [0, 4]
   },
   {
     "name": "Romas Puidokas",
-    "specialty": "Elektronikos inžinierius",
+    "specialty": "Automatikos inžinierius",
+    "drawable": "romas_puidokas",
     "topics": [3]
   },
   {
     "name": "Evaldas Pabrėža",
-    "specialty": "Lazerių kompanijos įkūrėjas.",
+    "specialty": "'Integrated Optics' direktorius",
+    "drawable": "evaldas_pabreza",
     "topics": [4]
   },
   {
-    "name": "Edmundas Balčikonis",
-    "specialty": "Programuotojas, startuolių įkūrėjas, vadybininkas",
+    "name": "Edmundas Balcikonis",
+    "specialty": "CEO TrackDuck",
+    "drawable": "edmundas_balcikonis",
     "topics": [4]
   },
   {
-    "name": "S. Trumifovas ir Ričardas Jašianskas",
-    "specialty": "Huge computer game company NordCurrent founders",
+    "name": "Sergejus Trofimovas ir Ričardas Jaščemskas",
+    "specialty": "'Nordcurent' įkūrėjas ir komunikacijos",
+    "drawable": "sergejus_ricardas",
     "topics": [2]
   }
 ]

@@ -37,7 +37,7 @@ class MainScreen : AppCompatActivity() {
 
         var quoteId : Int = preferences.getInt("QuoteId",0)
         var day : Int = preferences.getInt("CurrentDay",0)
-        setQuote(quoteId,day,loadJSONFromAsset("quotes.json"))
+        setQuote(quoteId,day,Utils.loadJSONFromAsset("quotes.json",this))
 
         startAnim()
 
@@ -71,19 +71,6 @@ class MainScreen : AppCompatActivity() {
         var author = obj.get("author")
         txt_quat.setText("${quote}")
         txt_quat_author.setText("-${author}")
-    }
-
-
-
-    fun loadJSONFromAsset(jsonFile : String): String {
-            var json: String? = null
-            val inputStream = getAssets().open(jsonFile)
-            val size = inputStream.available()
-            val buffer = ByteArray(size)
-            inputStream.read(buffer)
-            inputStream.close()
-            json = String(buffer)
-        return json
     }
 
 

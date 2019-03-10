@@ -6,6 +6,8 @@ import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.animation.AnimationUtils
+import kotlinx.android.synthetic.main.activity_main_screen.*
 import kotlinx.android.synthetic.main.activity_question_test.emotionView
 import kotlinx.android.synthetic.main.activity_question_test.ratingView
 import kotlinx.android.synthetic.main.activity_question_test.gradientBackgroundView
@@ -38,7 +40,7 @@ class QuestionTestActivity : AppCompatActivity() {
 
         }
 
-        questions = loadJSONFromAsset("test.json")
+        questions = Utils.loadJSONFromAsset("test.json",this)
         setQuestion(questions)
         setFonts()
 
@@ -49,6 +51,7 @@ class QuestionTestActivity : AppCompatActivity() {
 
         }
 
+        startAnim()
 
 
     }
@@ -86,6 +89,7 @@ class QuestionTestActivity : AppCompatActivity() {
 
                 sumTopics(topic as Int)
             }else{
+                selectedTopic()
                 submit_question_button.setText("Pamatyti rezultatus!")
                 startActivity(Intent(this, TestResultsActivity::class.java).putExtra("Topic",selectedTopic))
                 Log.i("TEST1", "${topic1}|${topic2}|${topic3}|${topic4}|${topic5}")
@@ -108,20 +112,25 @@ class QuestionTestActivity : AppCompatActivity() {
         }
     }
 
-    fun loadJSONFromAsset(jsonFile : String): String {
-        var json: String? = null
-        val inputStream = getAssets().open(jsonFile)
-        val size = inputStream.available()
-        val buffer = ByteArray(size)
-        inputStream.read(buffer)
-        inputStream.close()
-        json = String(buffer)
-        return json
-    }
-
     fun setFonts(){
         val typeface = Typeface.createFromAsset(applicationContext.assets, "fonts/larseit.otf")
 
         txt_question.setTypeface(typeface)
+    }
+
+
+    fun startAnim(){
+
+        val left_to_right = AnimationUtils.loadAnimation(this,R.anim.left_to_right)
+        val right_to_left = AnimationUtils.loadAnimation(this,R.anim.right_to_left)
+        val top_to_bottom = AnimationUtils.loadAnimation(this,R.anim.top_to_bottom)
+        val bottom_to_top = AnimationUtils.loadAnimation(this,R.anim.bottom_to_top)
+
+
+        txt_question.startAnimation(top_to_bottom)
+        emotionView.startAnimation(bottom_to_top)
+        submit_question_button.startAnimation(left_to_right)
+        ratingView.startAnimation(right_to_left)
+
     }
 }

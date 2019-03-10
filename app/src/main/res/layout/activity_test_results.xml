@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     tools:context=".TestResultsActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -41,9 +42,6 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="620dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/history_toolbar">
@@ -51,13 +49,81 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:orientation="vertical"
-            android:layout_height="wrap_content">
-
-            
+            android:layout_height="match_parent">
 
 
+            <androidx.cardview.widget.CardView
+                android:id="@+id/results_card"
+                android:layout_width="match_parent"
+                android:layout_height="600dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/history_toolbar"
+                card_view:cardBackgroundColor="#ffffff"
+                card_view:cardCornerRadius="1dp"
+                card_view:cardElevation="4dp"
+                card_view:cardMaxElevation="6dp"
+                card_view:contentPadding="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+
+                    <ImageView
+                        android:layout_width="250dp"
+                        android:layout_marginTop="50dp"
+                        android:id="@+id/test_result_image"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_height="250dp" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="80dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="50dp"
+                        android:id="@+id/test_result_specialty"
+                        android:gravity="center"
+                        android:text="Mechanikas"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="25dp"
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/test_result_specialty_description"
+                        android:gravity="center"
+                        android:text="Puikiai susidoroja su mechanikos, elektronikos ir net informacinių technologijų poreikiais"/>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Panašūs kūrėjai:"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:textSize="25dp"
+
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:id="@+id/similar_engineers_recycler"
+                android:layout_height="wrap_content">
+
+            </androidx.recyclerview.widget.RecyclerView>
 
         </LinearLayout>
+
+
+
+
 
 
     </ScrollView>

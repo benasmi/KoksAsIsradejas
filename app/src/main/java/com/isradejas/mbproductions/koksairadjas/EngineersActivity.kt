@@ -1,11 +1,13 @@
 package com.isradejas.mbproductions.koksairadjas
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_engineers.img_back_arrow
 import kotlinx.android.synthetic.main.activity_engineers.engineers_recyclerview
+import org.json.JSONArray
 
 
 class EngineersActivity : AppCompatActivity() {
@@ -31,18 +33,20 @@ class EngineersActivity : AppCompatActivity() {
         engineers_recyclerview.adapter = EngineersRecyclerView(engineers, this)
 
     }
+
         // Adds animals to the empty animals ArrayList
         fun addEngineers() {
-            Log.i("TEST", packageName);
-            engineers.add(Engineer("Edmundas Balcikonis","CEO TrackDuck", R.drawable.edmundas_balcikonis))
-            engineers.add(Engineer("Evaldas Pabreza"," 'Integrated Optics' direktorius", R.drawable.evaldas_pabreza))
-            engineers.add(Engineer("Romas Puidokas","Automatikos inžinierius", R.drawable.romas_puidokas))
-            engineers.add(Engineer("Vytautas Jokužis","Elinta įkūrėjas, technologijos mokslų daktaras", R.drawable.vytautas_jokuzis))
-            engineers.add(Engineer("Vytenis Bužas","'LithuanicaSAT-ą' kūrėjas, kosminės misijos vadovas", R.drawable.vytenis_buzas))
-            engineers.add(Engineer("Sergejus Trofimovas ir Ričardas Jaščemskas","'Nordcurrent' įkūrėjas ir komunikacijos", R.drawable.sergejus_ricardas))
+            var jsonFile = Utils.loadJSONFromAsset("kurejai.json", this)
+            var jsonArray = JSONArray(jsonFile)
+
+
+            for (x in 0 until jsonArray.length()){
+                var obj = jsonArray.getJSONObject(x)
+                var name:String = obj.get("name") as String
+                var about:String = obj.get("specialty") as String
+                var drawable:String = obj.get("drawable") as String
+                engineers.add(Engineer(name,about, Utils.getResourceID(drawable,"drawable",this)))
+            }
         }
 
-        fun startAnim(){
-
-        }
 }
