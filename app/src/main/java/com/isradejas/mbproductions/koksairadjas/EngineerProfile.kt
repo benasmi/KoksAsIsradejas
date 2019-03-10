@@ -1,12 +1,11 @@
 package com.isradejas.mbproductions.koksairadjas
 
 import android.graphics.Typeface
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.widget.ProgressBar
-import android.widget.SeekBar
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_engineer_profile.podcast_recycler
 import kotlinx.android.synthetic.main.activity_engineer_profile.img_back_arrow
@@ -95,7 +94,7 @@ class EngineerProfile : AppCompatActivity() {
         getPodcasts(engineer.FullName);
 
         // Creates a vertical Layout Manager
-        podcast_recycler.layoutManager = LinearLayoutManager(this) as RecyclerView.LayoutManager?
+        podcast_recycler.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this) as androidx.recyclerview.widget.RecyclerView.LayoutManager?
 
         // Access the RecyclerView Adapter and load the data into it
         podcast_recycler.adapter = PodcastRecyclerView(podcasts, this,seekBar)

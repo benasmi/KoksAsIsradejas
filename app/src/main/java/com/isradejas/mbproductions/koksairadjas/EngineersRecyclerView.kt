@@ -3,7 +3,7 @@ package com.isradejas.mbproductions.koksairadjas
 import android.content.Context
 import android.content.Intent
 import android.graphics.Typeface
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.engineer.view.*;
 import java.io.Serializable
 
 
-class EngineersRecyclerView(val items : ArrayList<Engineer>, val context: Context) : RecyclerView.Adapter<ViewHolder>() {
+class EngineersRecyclerView(val items : ArrayList<Engineer>, val context: Context) : androidx.recyclerview.widget.RecyclerView.Adapter<ViewHolder>() {
 
     val typeface = Typeface.createFromAsset(context.assets, "fonts/larseit.otf")
 
@@ -35,7 +35,7 @@ class EngineersRecyclerView(val items : ArrayList<Engineer>, val context: Contex
     }
 }
 
-class ViewHolder (view: View) : RecyclerView.ViewHolder(view) {
+class ViewHolder (view: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(view) {
     // Holds the TextView that will add each animal to
 
 

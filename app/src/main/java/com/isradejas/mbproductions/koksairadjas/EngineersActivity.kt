@@ -1,8 +1,8 @@
 package com.isradejas.mbproductions.koksairadjas
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_engineers.img_back_arrow
 import kotlinx.android.synthetic.main.activity_engineers.engineers_recyclerview
@@ -25,7 +25,7 @@ class EngineersActivity : AppCompatActivity() {
         addEngineers()
 
         // Creates a vertical Layout Manager
-        engineers_recyclerview.layoutManager = LinearLayoutManager(this)
+        engineers_recyclerview.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
 
         // Access the RecyclerView Adapter and load the data into it
         engineers_recyclerview.adapter = EngineersRecyclerView(engineers, this)
@@ -43,6 +43,6 @@ class EngineersActivity : AppCompatActivity() {
         }
 
         fun startAnim(){
-            
+
         }
 }

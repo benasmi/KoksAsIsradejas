@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EngineersActivity">
+    tools:context=".TestResultsActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/history_toolbar"
@@ -31,18 +31,35 @@
             android:layout_gravity="left"
             android:gravity="left"
             android:maxLines="1"
-            android:text="Žymūs inžinieriai"
+            android:text="Grįžti į pradžią"
             android:textColor="#000"
             android:textSize="18dp" />
 
     </androidx.appcompat.widget.Toolbar>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="410dp"
-        android:layout_height="602dp"
-        android:id="@+id/engineers_recyclerview"
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="620dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/history_toolbar"></androidx.recyclerview.widget.RecyclerView>
+        app:layout_constraintTop_toBottomOf="@+id/history_toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,23 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.isradejas.mbproductions.koksairadjas">
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:appComponentFactory="whateverString"
+        android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainScreen">
+        android:theme="@style/AppTheme"
+        tools:replace="android:appComponentFactory">
+        <activity
+            android:name=".MainScreen"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".EngineersActivity" />
-        <activity android:name=".EngineerProfile"></activity>
+        <activity
+            android:name=".EngineersActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EngineerProfile"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".QuestionTestActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TestTheme" />
+        <activity android:name=".TestResultsActivity"></activity>
     </application>
 
 </manifest>

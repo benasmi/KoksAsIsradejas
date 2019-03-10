@@ -1,0 +1,31 @@
+[{
+    "name": "Vytautas Buzas",
+    "specialty": "Orlaivių inžinierius",
+    "topics": [1]
+  },
+  {
+    "name": "Dr. Vytautas Jokužis",
+    "specialty": "Robotikos kompanijos įkūrėjas, inžinierius.",
+    "topics": [0, 4]
+  },
+  {
+    "name": "Romas Puidokas",
+    "specialty": "Elektronikos inžinierius",
+    "topics": [3]
+  },
+  {
+    "name": "Evaldas Pabrėža",
+    "specialty": "Lazerių kompanijos įkūrėjas.",
+    "topics": [4]
+  },
+  {
+    "name": "Edmundas Balčikonis",
+    "specialty": "Programuotojas, startuolių įkūrėjas, vadybininkas",
+    "topics": [4]
+  },
+  {
+    "name": "S. Trumifovas ir Ričardas Jašianskas",
+    "specialty": "Huge computer game company NordCurrent founders",
+    "topics": [2]
+  }
+]

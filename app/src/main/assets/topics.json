@@ -1,0 +1,26 @@
+[{
+    "name": "Robotikas",
+    "description": "Robotiko aprašymas",
+    "illustration": "img/robotikas.png"
+  },
+  {
+    "name": "Mechanikas",
+    "description": "Mechaniko aprašymas",
+    "illustration": "img/mechanikas.png"
+  },
+  {
+    "name": "Programuotojas",
+    "description": "Programuotojo aprašymas",
+    "illustration": "img/programuotojas.png"
+  },
+  {
+    "name": "Elektronikas",
+    "description": "Elektroniko aprašymas",
+    "illustration": "img/elektronikas.png"
+  },
+  {
+    "name": "Inovacijų vadybininkas",
+    "description": "Inovacijų vadybininko aprašymas",
+    "illustration": "img/inovaciju_vadybininkas.png"
+  },
+]

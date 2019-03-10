@@ -1,15 +1,12 @@
 package com.isradejas.mbproductions.koksairadjas
 
-import android.app.PendingIntent.getActivity
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Typeface
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.Window
-import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import kotlinx.android.synthetic.main.activity_main_screen.app_logo
 import kotlinx.android.synthetic.main.activity_main_screen.button_test
@@ -47,7 +44,12 @@ class MainScreen : AppCompatActivity() {
         button_podcasts.setOnClickListener{
             startActivity(Intent(this, EngineersActivity::class.java))
         }
+
+        button_test.setOnClickListener{
+            startActivity(Intent(this,QuestionTestActivity::class.java))
+        }
     }
+
 
     fun setQuote(quoteId : Int, day : Int, jsonFile:String){
         var jsonArray = JSONArray(jsonFile)

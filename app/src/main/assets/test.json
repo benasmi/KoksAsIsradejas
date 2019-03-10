@@ -1,0 +1,40 @@
+[{
+  "question": "Tau patinka konstruoti, ir paversti daiktus veikti, tarsi jie būtų gyvi ir savarankiški.",
+  "topic": 0
+}, {
+  "question": "Tau įdomiau kaip viskas sukonstruota, nei kaip suprogramuota.",
+  "topic": 1
+}, {
+  "question": "Tau patiktų, jei galima būtų padaryti taip, kad kasdienes problemas padėtų išspręsti kompiuterio programos.",
+  "topic": 2
+}, {
+  "question": "Manai, kad robotai – mūsų ateitis.",
+  "topic": 0
+}, {
+  "question": "Tau patinka elektroniniai signalai, ir kaip pasinaudojant jais galima būtų spręsti problemas.",
+  "topic": 1
+}, {
+  "question": "Tau įdomu, kaip iš tiesų veikia programavimas ir programos.",
+  "topic": 2
+}, {
+  "question": "Tau įdomu medžiagos, iš kurių kažkas padaryta, ir specialiosios jų savybės.",
+  "topic": 3
+}, {
+  "question": "Tau taip pat įdomu automobiliai, judantys aparatai.",
+  "topic": 1
+}, {
+  "question": "Norėtum neatsitraukdamas visą parą spręsti įdomius galvosūkius.",
+  "topic": 2
+}, {
+  "question": "Esi išardęs ar norėtum išardyti daugybę elektronikos prietaisų.",
+  "topic": 3
+}, {
+  "question": "Žiūrėdamas į ūkio darbus atliekantį prietaisą nuolat smalsauji, kaip jis veikia.",
+  "topic": 1
+}, {
+  "question": "Matydamas tuščią lauką, įsivaizduoji ten pastatytą miestą, fabrikus.",
+  "topic": 4
+}, {
+  "question": "Norėtum spręsti, kokie robotai bus statomi artimiausius penkeris metus.",
+  "topic": 4
+}]

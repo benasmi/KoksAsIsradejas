@@ -4,18 +4,16 @@ import android.content.Context
 import android.graphics.Typeface
 import android.media.MediaPlayer
 import android.os.Handler
-import android.support.v7.widget.RecyclerView
-import android.util.Log
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
-import android.widget.SeekBar
 import kotlinx.android.synthetic.main.podcast_element.view.*
 
 
 
-class PodcastRecyclerView(val items: ArrayList<Podcast>, val context: Context, seekBar: ProgressBar) : RecyclerView.Adapter<ViewHolderPodcast>() {
+class PodcastRecyclerView(val items: ArrayList<Podcast>, val context: Context, seekBar: ProgressBar) : androidx.recyclerview.widget.RecyclerView.Adapter<ViewHolderPodcast>() {
 
     val typeface = Typeface.createFromAsset(context.assets, "fonts/larseit.otf")
 
@@ -122,7 +120,7 @@ class PodcastRecyclerView(val items: ArrayList<Podcast>, val context: Context, s
     }
 }
 
-class ViewHolderPodcast (view: View) : RecyclerView.ViewHolder(view) {
+class ViewHolderPodcast (view: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(view) {
     val question = view.txt_question
     val playButton  = view.btn_play
 
