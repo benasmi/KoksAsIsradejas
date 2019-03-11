@@ -34,12 +34,16 @@ class MainScreen : AppCompatActivity() {
         setContentView(R.layout.activity_main_screen)
 
         preferences = getSharedPreferences("QUOTES", Context.MODE_PRIVATE);
-
         var quoteId : Int = preferences.getInt("QuoteId",0)
         var day : Int = preferences.getInt("CurrentDay",0)
+
         setQuote(quoteId,day,Utils.loadJSONFromAsset("quotes.json",this))
 
         startAnim()
+        onClicks()
+    }
+
+    fun onClicks(){
 
         button_podcasts.setOnClickListener{
             startActivity(Intent(this, EngineersActivity::class.java))
@@ -85,7 +89,6 @@ class MainScreen : AppCompatActivity() {
         txt_famous_engineer.setTypeface(typeface)
         txt_famous_engineer_descp.setTypeface(typeface)
 
-
         val left_to_right = AnimationUtils.loadAnimation(this,R.anim.left_to_right)
         val left_to_right_delay = AnimationUtils.loadAnimation(this,R.anim.left_to_right_delay)
         val right_to_left = AnimationUtils.loadAnimation(this,R.anim.right_to_left)
@@ -95,11 +98,9 @@ class MainScreen : AppCompatActivity() {
 
         imageView2.startAnimation(spin)
         app_logo.startAnimation(top_to_bottom)
-
         img_quat.startAnimation(left_to_right_delay)
         txt_quat.startAnimation(right_to_left_delay)
         txt_quat_author.startAnimation(right_to_left_delay)
-
         button_test.startAnimation(left_to_right)
         button_podcasts.startAnimation(right_to_left)
 

@@ -56,6 +56,7 @@
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:orientation="vertical"
+            android:id="@+id/profile_layout"
             tools:layout_editor_absoluteY="56dp">
 
             <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -64,7 +65,7 @@
                 android:layout_height="150dp"
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
-                android:src="@drawable/vytautas_jokuzis"
+                android:src="@drawable/vytautas_jokuzis_s"
                 app:civ_border_color="#FF000000"
                 app:civ_border_width="2dp" />
 
@@ -109,10 +110,13 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="290dp"
-        app:layout_constraintEnd_toEndOf="parent"
         android:id="@+id/podcast_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="284dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_podcasts"></androidx.recyclerview.widget.RecyclerView>

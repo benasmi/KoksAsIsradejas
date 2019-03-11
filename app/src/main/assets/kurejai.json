@@ -1,37 +1,37 @@
 [{
     "name": "Vytenis Buzas",
     "specialty": "'Lituanica SAT-1' kūrėjas, kosminės misijos vadovas",
-    "drawable": "vytenis_buzas",
+    "drawable": "vytenis_buzas_s",
     "topics": [1]
   },
   {
     "name": "Vytautas Jokužis",
     "specialty": "Elinta įkūrėjas, technologijos mokslų daktaras",
-    "drawable": "vytautas_jokuzis",
+    "drawable": "vytautas_jokuzis_s",
     "topics": [0, 4]
   },
   {
     "name": "Romas Puidokas",
     "specialty": "Automatikos inžinierius",
-    "drawable": "romas_puidokas",
+    "drawable": "romas_puidokas_s",
     "topics": [3]
   },
   {
     "name": "Evaldas Pabrėža",
     "specialty": "'Integrated Optics' direktorius",
-    "drawable": "evaldas_pabreza",
+    "drawable": "evaldas_pabreza_s",
     "topics": [4]
   },
   {
     "name": "Edmundas Balcikonis",
     "specialty": "CEO TrackDuck",
-    "drawable": "edmundas_balcikonis",
+    "drawable": "edmundas_balcikonis_s",
     "topics": [4]
   },
   {
     "name": "Sergejus Trofimovas ir Ričardas Jaščemskas",
     "specialty": "'Nordcurent' įkūrėjas ir komunikacijos",
-    "drawable": "sergejus_ricardas",
+    "drawable": "sergejus_ricardas_s",
     "topics": [2]
   }
 ]

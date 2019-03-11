@@ -25,6 +25,8 @@ class QuestionTestActivity : AppCompatActivity() {
     var topic4:Int = 0;
     var topic5:Int = 0;
 
+    var currentTopic:Int = 0;
+
     var selectedTopic:Int = 0;
 
     var questionId: Int = -1;
@@ -41,14 +43,14 @@ class QuestionTestActivity : AppCompatActivity() {
         }
 
         questions = Utils.loadJSONFromAsset("test.json",this)
-        setQuestion(questions)
+        currentTopic = setQuestion(questions)
         setFonts()
 
 
 
         submit_question_button.setOnClickListener {
-            setQuestion(questions)
-
+            sumTopics(currentTopic)
+            currentTopic = setQuestion(questions)
         }
 
         startAnim()
@@ -78,36 +80,42 @@ class QuestionTestActivity : AppCompatActivity() {
 
         }
     }
-    fun setQuestion(questionJson : String){
+    fun setQuestion(questionJson : String) : Int{
             questionId++;
             var jsonArray = JSONArray(questionJson)
             if(questionId<jsonArray.length()){
                 var obj = jsonArray.getJSONObject(questionId)
                 var question = obj.get("question")
-                var topic = obj.get("topic")
+                var topic = obj.get("topic") as Int
                 txt_question.setText("${question}")
-
-                sumTopics(topic as Int)
+                return topic
             }else{
                 selectedTopic()
                 submit_question_button.setText("Pamatyti rezultatus!")
                 startActivity(Intent(this, TestResultsActivity::class.java).putExtra("Topic",selectedTopic))
                 Log.i("TEST1", "${topic1}|${topic2}|${topic3}|${topic4}|${topic5}")
+                return -1
             }
-
-
     }
 
     fun sumTopics(currentTopic : Int){
         if(currentTopic==0){
+            Log.i("TEST1", "Topic0")
             topic1+=ratingView.getCurrentRating();
         }else if(currentTopic==1){
+            Log.i("TEST1", "Topic1")
+
             topic2+=ratingView.getCurrentRating();
         }else if(currentTopic==2){
+            Log.i("TEST1", "Topic2")
+
             topic3+=ratingView.getCurrentRating();
         }else if(currentTopic==3){
+            Log.i("TEST1", "Topic3")
+
             topic4+=ratingView.getCurrentRating();
         }else if(currentTopic==4){
+            Log.i("TEST1", "Topic4")
             topic5+=ratingView.getCurrentRating();
         }
     }

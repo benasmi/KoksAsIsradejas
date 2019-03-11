@@ -3,6 +3,7 @@ package com.isradejas.mbproductions.koksairadjas
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.animation.AnimationUtils
 import kotlinx.android.synthetic.main.activity_question_test.*
 import kotlinx.android.synthetic.main.activity_test_results.*
@@ -21,6 +22,7 @@ class TestResultsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_test_results)
 
         val topic: Int = intent.getIntExtra("Topic",0)
+        Log.i("TEST1", "${topic}")
         setUpResults(topic)
         addEngineers(topic)
         // Creates a vertical Layout Manager
