@@ -65,8 +65,6 @@ class QuestionTestActivity : AppCompatActivity() {
     }
 
     fun selectedTopic() :Int{
-        var max:Int = topicScores[0];
-        var maxIndex:Int = 0;
         return topicScores.indexOf(topicScores.max()!!)
     }
 
