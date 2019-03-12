@@ -1,123 +1,88 @@
 package com.isradejas.mbproductions.koksairadjas
 
 import android.content.Intent
-import android.graphics.Color
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.animation.AnimationUtils
-import kotlinx.android.synthetic.main.activity_main_screen.*
+import com.dm.emotionrating.library.RatingView
 import kotlinx.android.synthetic.main.activity_question_test.emotionView
 import kotlinx.android.synthetic.main.activity_question_test.ratingView
 import kotlinx.android.synthetic.main.activity_question_test.gradientBackgroundView
 import kotlinx.android.synthetic.main.activity_question_test.txt_question
 import kotlinx.android.synthetic.main.activity_question_test.submit_question_button
 import org.json.JSONArray
-import kotlin.math.max
+import java.util.*
 
 
 class QuestionTestActivity : AppCompatActivity() {
-
-    var topic1:Int = 0;
-    var topic2:Int = 0;
-    var topic3:Int = 0;
-    var topic4:Int = 0;
-    var topic5:Int = 0;
-
     var currentTopic:Int = 0;
-
-    var selectedTopic:Int = 0;
-
     var questionId: Int = -1;
-    lateinit var questions: String;
+
+    private lateinit var questions: JSONArray;
+    private lateinit var topicScores: IntArray
+
+    companion object {
+        private val RATING_OFFSET: Int = -3;
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_question_test)
 
+        Log.i("TEST", "Rating: ${ratingView.getCurrentRating()}")
+
         ratingView.setRatingChangeListener { previousRating, newRating ->
             emotionView.setRating(previousRating, newRating)
             gradientBackgroundView.changeBackground(previousRating, newRating)
-
         }
 
-        questions = Utils.loadJSONFromAsset("test.json",this)
-        currentTopic = setQuestion(questions)
+        questions = JSONArray(Utils.loadJSONFromAsset("test.json",this))
+
+        val topicCount = JSONArray(Utils.loadJSONFromAsset("topics.json",this)).length()
+        topicScores = IntArray(topicCount){0};
+
+        currentTopic = setQuestion()
         setFonts()
 
-
-
         submit_question_button.setOnClickListener {
-            sumTopics(currentTopic)
-            currentTopic = setQuestion(questions)
+            addScoreToTopic(currentTopic, ratingView.getCurrentRating()+RATING_OFFSET)
+            Log.i("TOPIC_LOG", "Current topic: ${currentTopic}")
+            Log.i("TOPIC_LOG", "Topic count: ${topicScores.size}")
+            Log.i("TOPIC_LOG", "Current scores:")
+            Log.i("TOPIC_LOG", Arrays.toString(topicScores))
+            Log.i("TOPIC_LOG", "=================");
+
+            currentTopic = setQuestion()
         }
 
         startAnim()
-
-
     }
 
-    fun selectedTopic() {
-        var maxtopic = max(max(topic1, topic2), max(max(topic3, topic4), topic5))
-        if (maxtopic == topic1) {
-            selectedTopic = 0;
-        }
-        if (maxtopic == topic2) {
-            selectedTopic = 1;
-
-        }
-        if (maxtopic == topic3) {
-            selectedTopic = 2;
-
-        }
-        if (maxtopic == topic4) {
-            selectedTopic = 3;
-
-        }
-        if (maxtopic == topic5) {
-            selectedTopic = 4;
-
-        }
+    fun addScoreToTopic(topic: Int, score:Int){
+        this.topicScores[topic]+=score;
     }
-    fun setQuestion(questionJson : String) : Int{
+
+    fun selectedTopic() :Int{
+        var max:Int = topicScores[0];
+        var maxIndex:Int = 0;
+        return topicScores.indexOf(topicScores.max()!!)
+    }
+
+    fun setQuestion() : Int{
             questionId++;
-            var jsonArray = JSONArray(questionJson)
-            if(questionId<jsonArray.length()){
-                var obj = jsonArray.getJSONObject(questionId)
-                var question = obj.get("question")
-                var topic = obj.get("topic") as Int
+            if(questionId<questions.length()){
+                val obj = questions.getJSONObject(questionId)
+                val question = obj.get("question")
+                val topic = obj.getInt("topic")
                 txt_question.setText("${question}")
                 return topic
             }else{
-                selectedTopic()
                 submit_question_button.setText("Pamatyti rezultatus!")
-                startActivity(Intent(this, TestResultsActivity::class.java).putExtra("Topic",selectedTopic))
-                Log.i("TEST1", "${topic1}|${topic2}|${topic3}|${topic4}|${topic5}")
+                startActivity(Intent(this, TestResultsActivity::class.java).putExtra("Topic",selectedTopic()))
                 return -1
             }
-    }
-
-    fun sumTopics(currentTopic : Int){
-        if(currentTopic==0){
-            Log.i("TEST1", "Topic0")
-            topic1+=ratingView.getCurrentRating();
-        }else if(currentTopic==1){
-            Log.i("TEST1", "Topic1")
-
-            topic2+=ratingView.getCurrentRating();
-        }else if(currentTopic==2){
-            Log.i("TEST1", "Topic2")
-
-            topic3+=ratingView.getCurrentRating();
-        }else if(currentTopic==3){
-            Log.i("TEST1", "Topic3")
-
-            topic4+=ratingView.getCurrentRating();
-        }else if(currentTopic==4){
-            Log.i("TEST1", "Topic4")
-            topic5+=ratingView.getCurrentRating();
-        }
     }
 
     fun setFonts(){
@@ -128,17 +93,14 @@ class QuestionTestActivity : AppCompatActivity() {
 
 
     fun startAnim(){
-
         val left_to_right = AnimationUtils.loadAnimation(this,R.anim.left_to_right)
         val right_to_left = AnimationUtils.loadAnimation(this,R.anim.right_to_left)
         val top_to_bottom = AnimationUtils.loadAnimation(this,R.anim.top_to_bottom)
         val bottom_to_top = AnimationUtils.loadAnimation(this,R.anim.bottom_to_top)
 
-
         txt_question.startAnimation(top_to_bottom)
         emotionView.startAnimation(bottom_to_top)
         submit_question_button.startAnimation(left_to_right)
         ratingView.startAnimation(right_to_left)
-
     }
 }

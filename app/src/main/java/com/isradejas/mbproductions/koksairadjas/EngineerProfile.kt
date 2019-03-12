@@ -47,7 +47,7 @@ class EngineerProfile : AppCompatActivity() {
         setFonts()
 
 
-        podcast_recycler.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this) as androidx.recyclerview.widget.RecyclerView.LayoutManager?
+        podcast_recycler.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
         podcast_recycler.adapter = PodcastRecyclerView(podcasts, this,progress_bar)
 
     }

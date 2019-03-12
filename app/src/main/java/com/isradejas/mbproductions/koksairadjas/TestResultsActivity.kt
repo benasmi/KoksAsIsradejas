@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.animation.AnimationUtils
-import kotlinx.android.synthetic.main.activity_question_test.*
+import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_test_results.*
 import kotlinx.android.synthetic.main.activity_test_results.results_card
 
@@ -22,15 +22,16 @@ class TestResultsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_test_results)
 
         val topic: Int = intent.getIntExtra("Topic",0)
-        Log.i("TEST1", "${topic}")
         setUpResults(topic)
         addEngineers(topic)
+
+        results_card.layoutParams.height = Utils.getScreenHeight(this@TestResultsActivity) - history_toolbar.layoutParams.height
+
         // Creates a vertical Layout Manager
-        similar_engineers_recycler.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this) as androidx.recyclerview.widget.RecyclerView.LayoutManager?
+        similar_engineers_recycler.layoutManager = object : LinearLayoutManager(this){ override fun canScrollVertically(): Boolean { return false } }
 
         // Access the RecyclerView Adapter and load the data into it
         similar_engineers_recycler.adapter = SimilarEngineersRecyclerview(engineers, this)
-
 
         img_back_arrow.setOnClickListener{
             startActivity(Intent(this,MainScreen::class.java))
@@ -39,18 +40,17 @@ class TestResultsActivity : AppCompatActivity() {
     }
 
     fun addEngineers(currentTopic : Int) {
-        var jsonFile = Utils.loadJSONFromAsset("kurejai.json", this)
-        var jsonArray = JSONArray(jsonFile)
+        val jsonArray = JSONArray(Utils.loadJSONFromAsset("kurejai.json", this))
 
         for (x in 0 until jsonArray.length()){
-            var obj = jsonArray.getJSONObject(x)
-            var name:String = obj.get("name") as String
-            var about:String = obj.get("specialty") as String
-            var drawable:String = obj.get("drawable") as String
+            val obj = jsonArray.getJSONObject(x)
+            val name:String = obj.get("name") as String
+            val about:String = obj.get("specialty") as String
+            val drawable:String = obj.get("drawable") as String
 
-            var topicsArray = obj.getJSONArray("topics");
+            val topicsArray = obj.getJSONArray("topics");
             for(y in 0 until topicsArray.length()){
-                var topic = topicsArray.getInt(y)
+                val topic = topicsArray.getInt(y)
                 if(topic == currentTopic){
                     engineers.add(Engineer(name,about, Utils.getResourceID(drawable,"drawable",this)))
                 }
@@ -59,9 +59,9 @@ class TestResultsActivity : AppCompatActivity() {
     }
 
     fun setUpResults(currenTopic : Int){
-        var jsonFile = Utils.loadJSONFromAsset("topics.json",this)
-        var jsonArray = JSONArray(jsonFile)
-        var obj = jsonArray.getJSONObject(currenTopic)
+        val jsonFile = Utils.loadJSONFromAsset("topics.json",this)
+        val jsonArray = JSONArray(jsonFile)
+        val obj = jsonArray.getJSONObject(currenTopic)
 
         test_result_image.setImageDrawable(getDrawable(Utils.getResourceID(obj.getString("drawable"),"drawable",this)))
         test_result_specialty.setText(obj.getString("name"))

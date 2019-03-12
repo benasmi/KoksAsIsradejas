@@ -24,10 +24,10 @@ class EngineersRecyclerView(val items : ArrayList<Engineer>, val context: Contex
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder?.engineerPhoto?.setImageDrawable(context.resources.getDrawable(items.get(position).PhotoResource));
-        holder?.engineerName?.setText(items.get(position).FullName)
-        holder?.engineerDescription?.setText(items.get(position).About)
-        holder?.buttonLayout?.setOnClickListener {
+        holder.engineerPhoto?.setImageDrawable(context.resources.getDrawable(items.get(position).PhotoResource));
+        holder.engineerName?.setText(items.get(position).FullName)
+        holder.engineerDescription?.setText(items.get(position).About)
+        holder.buttonLayout?.setOnClickListener {
             context.startActivity(Intent(context,EngineerProfile::class.java).putExtra("Engineer",items[position] as Serializable))
         }
     }

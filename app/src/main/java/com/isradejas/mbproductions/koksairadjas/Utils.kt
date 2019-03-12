@@ -1,6 +1,10 @@
 package com.isradejas.mbproductions.koksairadjas
 
+import android.app.Activity
 import android.content.Context
+import android.util.DisplayMetrics
+
+
 
 class Utils{
 
@@ -29,7 +33,15 @@ class Utils{
                 ResourceID
             }
         }
+
+        fun getScreenHeight(activity: Activity):Int{
+            val displayMetrics = DisplayMetrics()
+            activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics)
+            return displayMetrics.heightPixels
+        }
     }
+
+
 
 
 }
