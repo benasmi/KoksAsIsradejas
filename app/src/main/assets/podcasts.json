@@ -62,7 +62,75 @@
 
     ]
   },
-
+  {
+    "name": "Vytenis Buzas",
+    "topics":[
+      {
+        "question":"Kuo svajojote būti vaikystėje?",
+        "raw":"vytenis_buzas_vaikystes_svajone"
+      },
+      {
+        "question":"Ką įdomaus turėjote galimybę kurti universiteto studijų metu, kas jus išlaikė šiame kelyje?",
+        "raw":"vytenis_buzas_galimybe_kurti"
+      },
+      {
+        "question":"Kiek kito jūsų pomėgiai paauglystėje?",
+        "raw":"vytenis_buzas_kiek_kito_pomegiai"
+      },
+      {
+        "question":"Koki prietaisą prisimenate išardę, sugadinę ar sutaisę mokyklos laikais?",
+        "raw":"vytenis_buzas_isardyti_prietaisai"
+      },
+      {
+        "question":"Ar lankėte inžinerijos būrelius?", /*išgalvotas klausimas*/
+        "raw":"vytenis_buzas_inzinerijos_bureliai"
+      },
+      {
+        "question":"Kokios srities specialistai, asmenybės buvo Jūsų siekiamybė vaikystėje/pauglystėje?",
+        "raw":"vytenis_buzas_autoritetai"
+      },
+      {
+        "question":"Ar kilo abejonių dėl profesijos?",
+        "raw":"vytenis_buzas_abejones"
+      },
+      {
+        "question":"Ką įdomaus turėjote galimybę kurti universiteto studijų metu, kas jus išlaikė šiame kelyje?",
+        "raw":"vytenis_buzas_kuryba_universitete"
+      },
+      {
+        "question":"Kada buvo Jūsų sėkmės pradžia?",
+        "raw":"vytenis_buzas_sekmes_pradzia"
+      },
+      {
+        "question":"Galbūt galite papasakoti apie paskutinę ar įsimintiną savo inžinerinę sėkmę bei taip pat nesėkmę?",
+        "raw":"vytenis_buzas_sekmes_nesekmes"
+      },
+      {
+        "question":"Kuo skiriasi Lituanica SAT-2 nuo Lituanica SAT-1?",
+        "raw":"vytenis_buzas_projektu_skirtumai"
+      },
+      {
+        "question":"Kokio gyvenimo norėtumėte: Elono Musko, Bilo Geitso, Eriko Schmito, Steve Jobso, Prezidentės Grybauskaitės, Premjero ar galbūt kt.?",
+        "raw":"vytenis_buzas_kokio_gyvenimo_noretumete"
+      },
+      {
+        "question":"Ar išsdrįstumėte kardinalaiai pakeisti savo darbo sritį? Jei taip, tai kokia linkme dirbtumėte?",
+        "raw":"vytenis_buzas_darbo_srities_pakeitimas"
+      },
+      {
+        "question":"Kokia būtų jūsų ideali diena? Ko šiuo metu trūksta iki tokios?",
+        "raw":"vytenis_buzas_ideali_diena"
+      },
+      {
+        "question":"Jūsų motyvacijos paslaptis?",
+        "raw":"vytenis_buzas_motyvacijos_paslaptis"
+      },
+      {
+        "question":"Ko palinkėtumėte jaunam žmogui?",
+        "raw":"vytenis_buzas_palinkejimas_jaunam_zmogui"
+      }
+    ]
+  },
   {
     "name" : "Sergejus Trofimovas ir Ričardas Jaščemskas",
     "topics" :
@@ -84,7 +152,7 @@
         "raw" : "sergejus_inzinerine_sekme"
       },
       {
-        "question" : "Kokio gyvenimo norėtumėte, Elono Musko, Bilo Geitso, Eriko Schmito, Steve Jobso, Prezidentės Grybauskaitės, Premjero ar galbūt kt.?",
+        "question" : "Kokio gyvenimo norėtumėte: Elono Musko, Bilo Geitso, Eriko Schmito, Steve Jobso, Prezidentės Grybauskaitės, Premjero ar galbūt kt.?",
         "raw" : "sergejus_kokio_gyvenimo_noretumet"
       },
       {
