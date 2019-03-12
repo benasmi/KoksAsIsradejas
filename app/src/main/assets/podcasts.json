@@ -193,6 +193,72 @@
       }
     ]
   },
+  {
+    "name" : "Romas Puidokas",
+    "topics" :
+    [
+      {
+        "question" : "Kuo svajojote būti vaikystėje?",
+        "raw" : "romas_puidokas_vaikystes_svajones"
+      },
+      {
+        "question" : "Ką mėgote veikti žaidimo aikštelėje?",
+        "raw" : "romas_puidokas_uzsiemimai_zaidimu_aiksteleje"
+      },
+      {
+        "question" : "Kokį prietaisą prisimenate išardę, sugadinę ar sutaisę mokyklos laikais?",
+        "raw" : "p1sound50"
+      },
+      {
+        "question" : "Kokios srities specialistai, asmenybės buvo Jūsų siekiamybė vaikystėje/paauglystėje?",
+        "raw" : "p1sound70"
+      },
+      {
+        "question" : "Ar buvo lengva pasirinkti profesiją?",
+        "raw" : "p1sound80"
+      },
+      {
+        "question" : "Ką tokio įdomaus turėjote galimybę sukurti studijų universitete metais; kas Jus išlaikė šiame kelyje?",
+        "raw" : "p1sound90"
+      },
+      {
+        "question" : "Kada buvo Jūsų sėkmės pradžia?",
+        "raw" : "p1sound100"
+      },
+      {
+        "question" : "Jūsų motyvacijos paslaptis?",
+        "raw" : "p1sound110"
+      },
+      {
+        "question" : "Galbūt galite papasakoti apie paskutinę ar įsimintiną savo inžinerinę sėkmę, taip pat apie nesėkmę? Kaip sprendėte kilusias problemas, kas buvo netikėta?",
+        "raw" : "p1sound120"
+      },
+      {
+        "question" : "Kaip jaunam žmogui atrasti motyvacijos?",
+        "raw" : "p1sound130"
+      },
+      {
+        "question" : "Kokio gyvenimo norėtumėte, Elono Musko, Bilo Geitso, Eriko Schmito, Steve Jobso, Prezidentės Grybauskaitės, Premjero ar galbūt kt?",
+        "raw" : "p1sound140"
+      },
+      {
+        "question" : "Ar išdrįstumėte kardinaliai pakeisti savo darbo sritį? Jei taip, tai kokia linkme dirbtumėte?",
+        "raw" : "p1sound150"
+      },
+      {
+        "question" : "Kokia būtų Jūsų ideali diena? Ko šiuo metu trūksta iki tokios?",
+        "raw" : "p1sound160"
+      },
+      {
+        "question" : "Jūsų motyvacijos paslaptis?",
+        "raw" : "p1sound170"
+      },
+      {
+        "question" : "Ko palinkėtumėte jaunam žmogui?",
+        "raw" : "p1sound180"
+      }
+    ]
+  },
 
   {
     "name" : "Vytautas Jokužis",
