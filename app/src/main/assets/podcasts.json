@@ -259,6 +259,76 @@
       }
     ]
   },
+  {
+    "name" : "Evaldas Pabrėža",
+    "topics" :
+    [
+      {
+        "question" : "Kuo svajojote būti vaikystėje?",
+        "raw" : "p6sound10"
+      },
+      {
+        "question" : "Ar prisimenate, ką mėgote veikti žaidimo aikštelėje?",
+        "raw" : "p6sound20"
+      },
+      {
+        "question" : "Ar keitėsi jūsų pomėgiai paauglystėje?</",
+        "raw" : "p6sound30"
+      },
+      {
+        "question" : "Ką prisimenate statę darželio, mokyklos laikais?",
+        "raw" : "p6sound50"
+      },
+      {
+        "question" : "Ar šiuo metu turite autoritetą, kuris Jus įkvepia labiausiai?",
+        "raw" : "p6sound61"
+      },
+      {
+        "question" : "Ką tokio įdomaus turėjote galimybę sukurti studijų universitete metais?",
+        "raw" : "p6sound80"
+      },
+      {
+        "question" : "Kaip nusprendėte, kad jau pačiam metas kurti?",
+        "raw" : "p6sound81"
+      },
+      {
+        "question" : "Kada buvo Jūsų sėkmės pradžia?",
+        "raw" : "p6sound100"
+      },
+      {
+        "question" : "Papasakokite daugiau apie savo idėjas.",
+        "raw" : "p6sound101"
+      },
+      {
+        "question" : "Ar Jūsų papildoma veikla kitose įmonėse yra susijusi su šia pagrindine?",
+        "raw" : "p6sound102"
+      },
+      {
+        "question" : "Galbūt galite papasakoti apie paskutinę ar įsimintiną savo inžinerinę sėkmę, taip pat apie nesėkmę?",
+        "raw" : "p6sound110"
+      },
+      {
+        "question" : "Kaip Jūs renkatės bendradarbius? Kaip pas Jus vyksta kūrybinis darbas? Ar turite specialų sėkmingo produkto receptą?",
+        "raw" : "p6sound120"
+      },
+      {
+        "question" : "Kokio gyvenimo norėtumėte, Elono Musko, Bilo Geitso, Eriko Schmito, Steve Jobso, Prezidentės Grybauskaitės, Premjero ar galbūt kt.?",
+        "raw" : "p6sound130"
+      },
+      {
+        "question" : "Ar išdrįstumėte kardinaliai pakeisti savo darbo sritį? Jei taip, tai kokia linkme dirbtumėte?",
+        "raw" : "p6sound140"
+      },
+      {
+        "question" : "Kokia būtų Jūsų ideali diena? Ko šiuo metu trūksta iki tokios?",
+        "raw" : "p6sound150"
+      },
+      {
+        "question" : "Jūsų motyvacijos paslaptis?",
+        "raw" : "p6sound160"
+      }
+    ]
+  },
 
   {
     "name" : "Vytautas Jokužis",
