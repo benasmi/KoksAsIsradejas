@@ -34,6 +34,7 @@ class TestResultsActivity : AppCompatActivity() {
 
         img_back_arrow.setOnClickListener{
             startActivity(Intent(this,MainScreen::class.java))
+            finish()
         }
         startAnim()
     }
@@ -77,7 +78,8 @@ class TestResultsActivity : AppCompatActivity() {
 
     }
 
-
-
-
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
+    }
 }

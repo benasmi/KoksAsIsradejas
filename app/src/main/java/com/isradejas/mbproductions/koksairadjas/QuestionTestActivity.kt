@@ -84,6 +84,7 @@ class QuestionTestActivity : AppCompatActivity() {
                 return topic
             }else{
                 startActivity(Intent(this, TestResultsActivity::class.java).putExtra("Topic",selectedTopic()))
+                finish()
                 return -1
             }
     }
