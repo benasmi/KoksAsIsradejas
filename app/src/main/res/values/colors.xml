@@ -6,6 +6,7 @@
 
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="gray">#D1D1D1</color>
     <color name="orange">#FDAC54</color>
 
     <color name="firstGradientColor">#f1c40f</color>
@@ -13,7 +14,6 @@
     <color name="thirdGradientColor">#e67e22</color>
     <color name="fourthGradientColor">#FFE76F3C</color>
     <color name="fifthGradientColor">#e74c3c</color>
-
 
 
     <color name="colorTranslucentGray">#C8E5E5E5</color>

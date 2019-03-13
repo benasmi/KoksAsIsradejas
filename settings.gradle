@@ -1,1 +1,7 @@
+//include ':app'
+/*
+include ':app', ':emotion-rating-view'
+project(':emotion-rating-view').projectDir = new File('libraries/emotion-rating-view')
+*/
 include ':app'
+include ':libraries:emotion-rating-view'

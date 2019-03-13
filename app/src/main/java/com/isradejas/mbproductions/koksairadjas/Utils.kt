@@ -3,6 +3,10 @@ package com.isradejas.mbproductions.koksairadjas
 import android.app.Activity
 import android.content.Context
 import android.util.DisplayMetrics
+import android.content.res.TypedArray
+import android.R
+
+
 
 
 
@@ -11,14 +15,12 @@ class Utils{
     companion object {
 
         fun loadJSONFromAsset(jsonFile : String, context : Context): String {
-            var json: String? = null
             val inputStream = context.getAssets().open(jsonFile)
             val size = inputStream.available()
             val buffer = ByteArray(size)
             inputStream.read(buffer)
             inputStream.close()
-            json = String(buffer)
-            return json
+            return String(buffer)
         }
 
 
@@ -32,6 +34,14 @@ class Utils{
             } else {
                 ResourceID
             }
+        }
+
+        fun getToolBarHeight(context: Context): Int {
+            val attrs = intArrayOf(R.attr.actionBarSize)
+            val ta = context.obtainStyledAttributes(attrs)
+            val toolBarHeight = ta.getDimensionPixelSize(0, -1)
+            ta.recycle()
+            return toolBarHeight
         }
 
         fun getScreenHeight(activity: Activity):Int{

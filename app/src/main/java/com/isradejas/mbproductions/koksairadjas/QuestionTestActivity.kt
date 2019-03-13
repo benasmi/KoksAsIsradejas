@@ -31,10 +31,14 @@ class QuestionTestActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_question_test)
 
-        Log.i("TEST", "Rating: ${ratingView.getCurrentRating()}")
-
         ratingView.setRatingChangeListener { previousRating, newRating ->
-            emotionView.setRating(previousRating, newRating)
+            if(newRating == 0){
+                emotionView.setRating(previousRating, 3);
+            }else{
+                emotionView.setRating(previousRating, newRating)
+                submit_question_button.isEnabled = true;
+                submit_question_button.setTextColor(resources.getColor(R.color.white))
+            }
             gradientBackgroundView.changeBackground(previousRating, newRating)
         }
 
@@ -53,7 +57,9 @@ class QuestionTestActivity : AppCompatActivity() {
             Log.i("TOPIC_LOG", "Current scores:")
             Log.i("TOPIC_LOG", Arrays.toString(topicScores))
             Log.i("TOPIC_LOG", "=================");
-
+            ratingView.setRating(0);
+            submit_question_button.isEnabled = false;
+            submit_question_button.setTextColor(resources.getColor(R.color.gray))
             currentTopic = setQuestion()
         }
 
@@ -77,7 +83,6 @@ class QuestionTestActivity : AppCompatActivity() {
                 txt_question.setText("${question}")
                 return topic
             }else{
-                submit_question_button.setText("Pamatyti rezultatus!")
                 startActivity(Intent(this, TestResultsActivity::class.java).putExtra("Topic",selectedTopic()))
                 return -1
             }

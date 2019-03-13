@@ -26,7 +26,6 @@ class TestResultsActivity : AppCompatActivity() {
         addEngineers(topic)
 
         results_card.layoutParams.height = Utils.getScreenHeight(this@TestResultsActivity) - history_toolbar.layoutParams.height
-
         // Creates a vertical Layout Manager
         similar_engineers_recycler.layoutManager = object : LinearLayoutManager(this){ override fun canScrollVertically(): Boolean { return false } }
 
