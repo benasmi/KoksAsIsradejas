@@ -41,15 +41,16 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="620dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/history_toolbar">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
 
             <androidx.cardview.widget.CardView
@@ -67,35 +68,35 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:orientation="vertical"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
 
                     <ImageView
-                        android:layout_width="250dp"
-                        android:layout_marginTop="50dp"
                         android:id="@+id/test_result_image"
+                        android:layout_width="250dp"
+                        android:layout_height="250dp"
                         android:layout_gravity="center_horizontal"
-                        android:layout_height="250dp" />
+                        android:layout_marginTop="50dp" />
 
 
                     <TextView
-                        android:layout_width="match_parent"
-                        android:layout_marginTop="80dp"
-                        android:layout_height="wrap_content"
-                        android:textSize="50dp"
                         android:id="@+id/test_result_specialty"
-                        android:gravity="center"
-                        android:text="Mechanikas"/>
-
-                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="25dp"
-                        android:layout_marginTop="5dp"
-                        android:id="@+id/test_result_specialty_description"
+                        android:layout_marginTop="80dp"
                         android:gravity="center"
-                        android:text="Puikiai susidoroja su mechanikos, elektronikos ir net informacinių technologijų poreikiais"/>
+                        android:text="Mechanikas"
+                        android:textSize="50dp" />
+
+                    <TextView
+                        android:id="@+id/test_result_specialty_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:text="Puikiai susidoroja su mechanikos, elektronikos ir net informacinių technologijų poreikiais"
+                        android:textSize="25dp" />
 
 
                 </LinearLayout>
@@ -105,25 +106,21 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Panašūs kūrėjai:"
-                android:gravity="center"
                 android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Panašūs kūrėjai:"
                 android:textSize="25dp"
 
                 />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
                 android:id="@+id/similar_engineers_recycler"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
             </androidx.recyclerview.widget.RecyclerView>
 
         </LinearLayout>
-
-
-
-
 
 
     </ScrollView>
