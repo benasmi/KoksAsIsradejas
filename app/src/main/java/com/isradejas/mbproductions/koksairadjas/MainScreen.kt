@@ -1,13 +1,16 @@
 package com.isradejas.mbproductions.koksairadjas
 
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.animation.AnimationUtils
+import androidx.appcompat.app.AlertDialog
 import kotlinx.android.synthetic.main.activity_main_screen.app_logo
 import kotlinx.android.synthetic.main.activity_main_screen.button_test
 import kotlinx.android.synthetic.main.activity_main_screen.button_podcasts
@@ -19,15 +22,20 @@ import kotlinx.android.synthetic.main.activity_main_screen.txt_test
 import kotlinx.android.synthetic.main.activity_main_screen.txt_test_description
 import kotlinx.android.synthetic.main.activity_main_screen.txt_famous_engineer
 import kotlinx.android.synthetic.main.activity_main_screen.txt_famous_engineer_descp
+import kotlinx.android.synthetic.main.activity_main_screen.info_btn
 import org.json.JSONArray
 import java.util.*
 import java.util.Calendar.DAY_OF_YEAR
+import android.widget.TextView
+
+
 
 
 class MainScreen : AppCompatActivity() {
 
 
     lateinit var preferences : SharedPreferences
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +60,28 @@ class MainScreen : AppCompatActivity() {
         button_test.setOnClickListener{
             startActivity(Intent(this,QuestionTestActivity::class.java))
         }
+
+        info_btn.setOnClickListener{
+            //Inflate the dialog with custom view
+            val mDialogView = LayoutInflater.from(this).inflate(R.layout.custom_dialog, null)
+            val textView = mDialogView.findViewById(R.id.info_txt) as TextView
+            val typeface = Typeface.createFromAsset(applicationContext.assets, "fonts/larseit.otf")
+            textView.setTypeface(typeface)
+            //AlertDialogBuilder
+            val mBuilder = AlertDialog.Builder(this)
+                    .setView(mDialogView)
+                    .setTitle("Apie")
+                    .setIcon(R.drawable.icon)
+                    .setNeutralButton("Supratau!",DialogInterface.OnClickListener { dialog, which ->
+
+
+                    })
+                    .setCancelable(true)
+            //show dialog
+            val  mAlertDialog = mBuilder.show()
+
+        }
+
     }
 
 
@@ -95,7 +125,9 @@ class MainScreen : AppCompatActivity() {
         val right_to_left_delay = AnimationUtils.loadAnimation(this,R.anim.right_to_left_delay)
         val top_to_bottom = AnimationUtils.loadAnimation(this,R.anim.top_to_bottom)
         val spin = AnimationUtils.loadAnimation(this,R.anim.spin);
+        val fade = AnimationUtils.loadAnimation(this,R.anim.fade_in_delay);
 
+        info_btn.startAnimation(fade)
         imageView2.startAnimation(spin)
         app_logo.startAnimation(top_to_bottom)
         img_quat.startAnimation(left_to_right_delay)
