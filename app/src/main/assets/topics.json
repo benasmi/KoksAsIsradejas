@@ -1,26 +1,28 @@
 [{
     "name": "Robotikas",
-    "description": "Robotiko aprašymas",
+    "description": "Geba kurti, projektuoti, diegti bei aptarnauti robotus ir jų sistemas. Mėgsta konstruoti ir taisyti",
     "drawable": "ic_robotics"
   },
   {
     "name": "Mechanikas",
-    "description": "Puikiai susidoroja su mechanikos, elektronikos ir net informacinių technologijų poreikiais",
+    "description": "Mechanikos inžinieriai taiko inžinerijos, fizikos ir medžiagotyros žinias kūrybai, analizei ir gamybai.",
     "drawable": "ic_mechanics"
+
   },
   {
     "name": "Programuotojas",
-    "description": "Programuotojo aprašymas",
+    "description": "Programuotojas, programų sistemų inžinierius ar programų sistemų architektas kuria prietaisų ir sistemų tarpusavio veikimą išsamiai aprašančias programas.",
     "drawable": "ic_programmer"
+
   },
   {
     "name": "Elektronikas",
-    "description": "Elektroniko aprašymas",
+    "description": "Elektros inžinieriai studijuoja ir taiko elektros, elektronikos ir elektromagnetizmo žinias.",
     "drawable": "ic_electrician"
   },
   {
     "name": "Inovacijų vadybininkas",
-    "description": "Inovacijų vadybininko aprašymas",
+    "description": "Inovatorius, naujų idėjų kuratorius. Pasižymi puikiais lyderystės gebėjimais, tendencija rizikuoti.",
     "drawable": "ic_enterp"
   }
 ]

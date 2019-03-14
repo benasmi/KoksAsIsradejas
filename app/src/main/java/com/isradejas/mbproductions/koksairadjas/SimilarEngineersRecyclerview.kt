@@ -26,6 +26,7 @@ class SimilarEngineersRecyclerview(val items : ArrayList<Engineer>, val context:
     override fun onBindViewHolder(holder: SimilarEngineerViewHolder, position: Int) {
         holder?.profile_name.setText(items[position].FullName)
         holder?.profile_desc.setText(items[position].About)
+        holder?.links.setText(items[position].LearnMore)
         holder?.profile_pic?.setImageDrawable(context.resources.getDrawable(items.get(position).PhotoResource));
     }
 }
@@ -36,5 +37,6 @@ class SimilarEngineerViewHolder (view: View) : androidx.recyclerview.widget.Recy
     val profile_name = view.profile_name
     val profile_desc = view.profile_description
     val profile_pic = view.profile_image
+    val links = view.learn_more_txt
 
 }

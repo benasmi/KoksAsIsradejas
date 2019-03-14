@@ -2,36 +2,46 @@
     "name": "Vytenis Buzas",
     "specialty": "'Lituanica SAT-1' kūrėjas, kosminės misijos vadovas",
     "drawable": "vytenis_buzas_s",
-    "topics": [1]
+    "topics": [1],
+     "links": ["http://www.robotikosmokykla.lt/medziaga/solidworks/solidworks-pamoku-turinys/","www.makerbeam.com","info@robotikosmokykla.lt"]
   },
   {
     "name": "Vytautas Jokužis",
     "specialty": "Elinta įkūrėjas, technologijos mokslų daktaras",
     "drawable": "vytautas_jokuzis_s",
-    "topics": [0, 4]
+    "topics": [0, 4],
+    "links": ["https://www.ted.com/playlists/310/talks_on_artificial_intelligen","play.gaminu.eu","info@robotikosmokykla.lt"]
   },
   {
     "name": "Romas Puidokas",
     "specialty": "Automatikos inžinierius",
     "drawable": "romas_puidokas_s",
-    "topics": [3]
+    "topics": [3],
+    "links": ["http://wiki.robotikosmokykla.lt/doku.php?id=praktines_uzduotys","info@robotikosmokykla.lt"]
+
   },
   {
     "name": "Evaldas Pabrėža",
     "specialty": "'Integrated Optics' direktorius",
     "drawable": "evaldas_pabreza_s",
-    "topics": [4]
+    "topics": [4],
+    "links": ["https://www.ted.com/talks/simon_sinek_how_great_leaders_inspire_action","http://lja.lt/"]
+
   },
   {
     "name": "Edmundas Balcikonis",
     "specialty": "CEO TrackDuck",
     "drawable": "edmundas_balcikonis_s",
-    "topics": [4]
+    "topics": [4],
+    "links": ["https://www.ted.com/talks/simon_sinek_how_great_leaders_inspire_action","http://lja.lt/"]
+
   },
   {
     "name": "Sergejus Trofimovas ir Ričardas Jaščemskas",
     "specialty": "'Nordcurent' įkūrėjas ir komunikacijos",
     "drawable": "sergejus_ricardas_s",
-    "topics": [2]
+    "topics": [2],
+    "links": ["https://code.org/","http://wiki.robotikosmokykla.lt/doku.php?id=arduivadas_projektai ","info@robotikosmokykla.lt"]
+
   }
 ]

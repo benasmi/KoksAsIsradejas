@@ -41,20 +41,26 @@ class TestResultsActivity : AppCompatActivity() {
 
     fun addEngineers(currentTopic : Int) {
         val jsonArray = JSONArray(Utils.loadJSONFromAsset("kurejai.json", this))
-
+        var link = ""
         for (x in 0 until jsonArray.length()){
             val obj = jsonArray.getJSONObject(x)
             val name:String = obj.get("name") as String
             val about:String = obj.get("specialty") as String
             val drawable:String = obj.get("drawable") as String
-
             val topicsArray = obj.getJSONArray("topics");
+            val linksArray = obj.getJSONArray("links")
+
+            for(z in 0 until linksArray.length()){
+                link = link + linksArray.getString(z) + "\n\n"
+            }
+
             for(y in 0 until topicsArray.length()){
                 val topic = topicsArray.getInt(y)
                 if(topic == currentTopic){
-                    engineers.add(Engineer(name,about, Utils.getResourceID(drawable,"drawable",this)))
+                    engineers.add(Engineer(name,about, Utils.getResourceID(drawable,"drawable",this),link))
                 }
             }
+            link = ""
         }
     }
 
